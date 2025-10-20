@@ -1,0 +1,27 @@
+Task-1 : Scanning Local Network for open ports.
+Tools Used: Nmap, Wireshark, Command Prompt.
+Procedure:
+Step 1- Install Nmap application from Website "https://nmap.org/download"
+Step 2- Open Command prompt and given cmd "ipconfig" to know the ipV4 address.
+        Example: 192.168.0.104/24
+Step 3: Now open Nmap and type cmd " nmap -sS ipaddress/24 " to perform stealth scan for the range of ip given.
+        Command: nmap -sS 192.168.0.104/24
+Step 4: After scanning the given ip address, we get to find information of number of ip address scanned and the ports opened with the service name for particular ip address.
+
+Response Received from 256 ip addresses scanned: Nmap scan report for 192.168.0.1
+Host is up (0.0077s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT     STATE    SERVICE
+23/tcp   filtered telnet
+80/tcp   open     http
+1900/tcp open     upnp
+MAC Address: 60:32:B1:9F:9D:B0 (TP-Link Technologies)
+
+Step 5: Open Wireshark and capture the packet for which response was received with RST+ ACK for ipaddress.
+
+Observation:
+Found port open, wherein there will be a high chance for Sniffing of packets by the attacker and can perform Man-in-the-Middle attack as there is no encryption found for the particular ip mentioned.
+
+
+
+
